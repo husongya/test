@@ -11,6 +11,7 @@ use File::Basename;
 use File::Path;
 use POSIX qw(strftime);
 use strict;
+use Data::Dumper;
 
 my $self = {};
 my $conn;
@@ -86,10 +87,10 @@ sub analyse_url {
         my $stuff_content = $1;
         my $img_content = $3;
 
-        my $p = HTML::TokeParser->new(\$content);
-        my $ps = HTML::TokeParser->new(\$img_content);
         my $t = HTML::TokeParser->new(\$content);
         my $m = HTML::TokeParser->new(\$content);
+        my $assetContent = HTML::TokeParser->new(\$img_content);
+        my $imagesContent = HTML::TokeParser->new(\$img_content);
         $t->get_tag("title");
         $title = $t->get_trimmed_text;
         $title =~ s/$c_host//;
@@ -106,28 +107,39 @@ sub analyse_url {
             }
         }
         #print "title:$title\n keywords:$keywords\n description:$description\n";
-        while (my $token = $p->get_tag("a")) {
+        
+        #获取所有下载链接
+        while (my $token = $assetContent->get_tag("a")) {
             my $url = $token->[1]{href} || "";
-            push(@all_file_url,$url),if $url =~ m/http:\/\/downno/s;
+            push(@all_file_url,$url),if $url =~ m/http:\/\/down/s;
         }
-        while (my $tokens = $ps->get_tag("img")) {
-            my $src = $tokens->[1]{src};
+        
+        #获取内容主要图片
+        while (my $token = $imagesContent->get_tag("img")) {
+            my $src = $token->[1]{src};
             push(@all_image,$host.$src),if $src =~ m/.(jpg||gif||png)/s;
         }
+        
         ###
         my $image_url = $all_image[0];
-        my $file_url = $all_file_url[1];
+        my $file_url = $all_file_url[0];
 
         my $source_type = $self->{'source_type'};
         if(!defined $file_url or $file_url eq ""){
             $self->log("get content is error:url is $get_url:path is null");
-            #return 0;
+            return 0;
         }
-        #print "c:$stuff_content\n image:$image_url, file:$file_url\n";
+        #print "content:$stuff_content\n image:$image_url, file:$file_url\n";
         $image_url =~ m/\.com(.*)/sg;
         my $insert_image_url = $source_type."/images".$1;
-        $file_url =~ m/\.com(.*)/sg;
+        
+        #print "$insert_image_url\n";
+        
+        $file_url =~ m/\.com:9797(.*)/sg;
         my $insert_file_url = $source_type."/files".$1;
+        
+        #print "$insert_file_url\n";
+        
 
         my $image = $self->save_file($image_url,"images");
         my $file = $self->save_file($file_url,"files");
@@ -142,6 +154,9 @@ sub analyse_url {
             ### 更新源状态
             my $source = $conn->prepare("UPDATE `$source_table` SET `state` = '1' WHERE `id` =? LIMIT 1");
             $source->execute($id);
+        }else{
+            
+            #error
         }
         
     }else{
@@ -161,7 +176,7 @@ sub analyse_url {
 sub save_file{
     my ($self,$get_url,$type) = (shift,shift,shift);
     my $ua = LWP::UserAgent->new();
-       $ua->timeout(30);
+       $ua->timeout(300);
     my ($req,$res);
     my $state = 1;
     print "get url:$get_url\n";
@@ -173,16 +188,17 @@ sub save_file{
         my $filename = $name.$extension;
         my $host = $self->{'host'}."/";
         my $dir = $self->{'save_path'}.$type."/";
+        $path =~ s/com:9797/com/;
         $path =~ s/^http:(.*)\.com\//$dir/;
-        my $save_path = $path.$filename;
-    
+        my $save_path = $path.$filename;        
+        
         unless(-e "$save_path" ) {
             unless(-d $path){
                 eval{mkpath($path,0,0755)};
                 $self->log("make dir:$path");
                 if($@){
-                    return 0;
                     $self->log("Make path [$path] failed:\n$@");
+                    return 0;
                 }
             }
             open(FILE,">$save_path") or die("$!");
