@@ -1,0 +1,14 @@
+<div id="footer">
+    {{if $footer eq 1 && $cid eq 0}}
+    <p>
+        {{foreach item=c from=$category}}
+        <a title="{{$c.title}}" href="{{$domain}}{{format key='category' cid=$c.id}}">{{$c.title}}</a>
+        {{/foreach}}
+    </p>
+    {{/if}}
+    <p>版权所有 <a href="http://www.imgsky.com/" title="矢量素材下载">图片天空</a>（www.imgsky.com) <a href="http://www.imgsky.com/" title="矢量素材下载">矢量素材下载站</a> 最佳分辨率 1024×768</p>
+    <p>Copyright © 2008-2009 www.imgsky.com Incorporated. All rights reserved.</p>
+</div>
+<div style="display:none">
+<script src="http://s19.cnzz.com/stat.php?id=1610103&web_id=1610103" language="JavaScript" charset="gb2312"></script>
+</div>

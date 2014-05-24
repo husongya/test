@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台分类管理</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/show.css" rel="stylesheet" type="text/css" />
+<link href="css/page.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="wrapper">
+       
+        <div id="show_list">
+                     <h1>{{include file="admin/navigation.html"}}</h1>
+            <form action="index.php?action=categorySave" method=post> 
+	            <table  width="90%" cellspacing="10" cellpadding="0">
+	              <tr>
+	                <td>标题：
+	                <input type="hidden" name="id" value="{{$result.id}}"/><input type="hidden" name="http" value="{{$http}}"/>
+	                <input type="text" name="title" value="{{$result.title}}"/>
+	                </td>
+	              </tr>
+	              <tr>
+	                <td>关键字：<textarea type="text" style="width:360;" name="keywords">{{$result.keywords}}</textarea></td>
+	              </tr>
+	              <tr>
+	                <td>描述：<textarea type="text" style="width:360;" name="description">{{$result.description}}</textarea></td>
+	              </tr>
+	              <tr>
+	                <td>排序：<textarea type="text" style="width:760;" name="ordering">{{$result.ordering}}</textarea></td>
+	              </tr>
+	              <tr>
+	                <td>状态：开启<input type="radio" name="state" value="1" {{if $result.state eq 1}}checked{{/if}}/>,关闭<input type="radio" name="state" value="0" {{if $result.state eq 0}}checked{{/if}}/></td>
+	              </tr>
+	              
+	            </table>
+	            <input type="submit" value="submit" />
+            </form>
+        </div>
+</div>
+

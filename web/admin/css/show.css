@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */
+
+#show_list {
+	background-color: #fff;
+	padding: 10px;
+}
+#show_list h1 {
+	font-size: 14px;
+	color: #FFFFFF;
+	background-image: url(../images/bg_icon.gif);
+	background-repeat: repeat-x;
+	height: 24px;
+	padding-top: 6px;
+	padding-left: 15px;
+	width: 955px;
+}
+#show_list h1 a {
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-right: 15px;
+}
+#show_list h1 a:hover {
+	text-decoration: underline;
+}
+#list_button {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#list_button a {
+	font-size: 14px;
+	color: #FF6600;
+	text-decoration: underline;
+	font-weight: bold;
+}
+#list_button a:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+
+#list {
+	background-color: #f0f0f0;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+#page {
+	text-align: right;
+}
+#list ul {
+	padding-bottom: 10px;
+	padding-top: 15px;
+}
+
+#list li {
+	list-style-type: none;
+	float: left;
+	height: 275px;
+	width: 162px;
+	background-color: #f6f6f6;
+	border: 1px solid #D4D4D4;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 8px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+}
+#list li p {
+	font-size: 12px;
+	line-height: 20px;
+	color: #666666;
+	font-weight: normal;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#list p a {
+	color: #FF6600;
+	text-decoration: underline;
+}
+#list p a:hover {
+	color: #333333;
+	text-decoration: underline;
+}
+#list img {
+	margin-left: 10px;
+}
+
+
+#work {
+	width: 850px;
+	margin-right: auto;
+	margin-bottom: 15px;
+	margin-left: auto;
+	text-align: center;
+	padding-top: 15px;
+}
+#work p {
+	padding-top: 10px;
+	text-align: right;
+	padding-right: 40px;
+}
+#work_info {
+	background-color: #FFF;
+	width: 780px;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	padding-bottom: 15px;
+}
+#work_info h2 {
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+	padding-bottom: 5px;
+}
+#work_info p {
+	color: #666666;
+	line-height: 25px;
+}
+#info {
+	float: left;
+	width: 360px;
+}
+#introduction {
+	float: left;
+	width: 320px;
+	margin-left: 40px;
+}
+#introduction img {
+	float: left;
+}
+#introduction p {
+	padding-left: 105px;
+}
+#introduction span {
+	font-weight: bold;
+	color: #ff6600;
+}
+
+#pic{
+	width:800px;
+	overflow-x:auto;
+}
+.account{
+    width:50%;
+}
+
+.tryout{
+    margin:20px 0;
+}
+
+.tryout thead{
+    text-align:left;
+  
+}
+
+.tryout td, .tryout th{
+    border:1px solid #dcdcdc;
+    height:24px;
+    padding-left:5px;
+}

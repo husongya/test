@@ -1,0 +1,28 @@
+/*
+1－*入口竞赛系统
+目录结构：
+--admin 后台管理目录
+--config 配置文件目录
+--logs 日志目录
+--src 源码目录
+--static 模板以及css js imags等目录
+--upload 上传文件目录
+--app 入口文件
+--*.php
+--/opt/project/match 竞赛系统核心文件
+*/
+环境要求：os linux,php5.0以上，xcache(可选)，memcached,memcache for php，imageMagick,magickWand.
+nginx/apache,可解析app文件。
+
+1.先配置config下文件 和 产品下app文件相关参数
+2.初始化model set.php文件 模板放在template/set/set.html下
+3.目录权限chmod 777 logs/*.log,static/templates_c,static/cache
+4.性能优化：缓存(memcache,xcache)，js、css压缩成一个文件。
+5.简单权限验证：authority()
+6.工具：获取表名，字段名，生成静态页
+7.公用模块：
+  登录，注册，model初始化，用户信息
+  上传，略缩图，系统日志(log)
+
+
+GET,POST $this->get($key);

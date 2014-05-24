@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background-color: #e6e6e6;
+	font-family: Arial, Helvetica, sans-serif,;
+	font-size: 12px;
+    }
+*{
+	margin:0pt;
+	padding:0pt;
+    }
+.clear {
+	clear: both;
+}
+#wrapper{
+    background-color:#fff;
+    margin:0pt auto;
+    width:990px;
+    
+}
+#deer_nav li {
+	list-style-type: none;
+	float: left;
+}
+#deer_nav li a.nav1 {
+	background: url(../images/nav_001.jpg) no-repeat;
+	width:64px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav1:hover {
+	background: url(../images/nav_001_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav2 {
+	background: url(../images/nav_002.jpg) no-repeat;
+	width:101px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav2:hover {
+	background: url(../images/nav_002_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav3 {
+	background: url(../images/nav_003.jpg) no-repeat;
+	width:99px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav3:hover {
+	background: url(../images/nav_003_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav4 {
+	background: url(../images/nav_004.jpg) no-repeat;
+	width:121px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav4:hover {
+	background: url(../images/nav_004_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav5 {
+	background: url(../images/nav_005.jpg) no-repeat;
+	width:100px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav5:hover {
+	background: url(../images/nav_005_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav6 {
+	background: url(../images/nav_006.jpg) no-repeat;
+	width:102px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav6:hover {
+	background: url(../images/nav_006_1.jpg) no-repeat;
+}
+
+#deer_nav li a.nav7 {
+	background: url(../images/nav_007.jpg) no-repeat;
+	width:107px;
+	height:65px;
+	display:block;
+}
+
+#deer_nav li a.nav7:hover {
+	background: url(../images/nav_007_1.jpg) no-repeat;
+}
+#contact {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+}
+#page {
+	line-height: 22px;
+}
+

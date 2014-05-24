@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="robots" content="follow,all">
+<meta content="{{$stuff.keywords}},图片天空素材网" name="keywords"/>
+<meta content="{{$stuff.description}},图片天空素材网" name="description"/>
+<link rel="stylesheet" rev="stylesheet" type="text/css" href="/css/view.css" media="all" />
+<title>{{$stuff.title}},{{$stuff.category.title}},矢量素材下载,图片天空素材网</title>
+</head>
+<body>
+<div id="wrapper">
+{{include file='header.html'}}
+    <div id="main" class="wrapfix">
+        <div class="leftList">
+            <div class="list">
+                <h2>最新上传</h2>
+                <ul>
+                    {{foreach item=p from=$new_data}}
+                    <li><a href="{{$domain}}{{format key='sucai' id=$p.id}}" title="{{$p.title}}">{{$p.title}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            <div class="list">
+                <h2>最近浏览</h2>
+                <ul>
+                    {{foreach item=p from=$last_data}}
+                    <li><a href="{{$domain}}{{format key='sucai' id=$p.stuff_id}}" title="{{$p.title}}">{{$p.title}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            <div class="list">
+                <h2>随机素材</h2>
+                <ul>
+                    {{foreach item=p from=$new_data}}
+                    <li><a href="{{$domain}}{{format key='sucai' id=$p.id}}" title="{{$p.title}}">{{$p.title}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            <div class="ad">
+            </div>
+        </div>
+        <div class="rightPic">
+            <div class="pic">
+                <a href="{{$domain}}{{format key='sucai' id=$stuff.id}}" title="{{$stuff.title}}"><img src="/upload/{{$stuff.image_url}}"/></a>
+            </div>
+            <div class="info">
+                <h1>{{$stuff.title}}</h1>
+                <p><b>内容介绍：</b>{{$stuff.description}}</p>
+                <h5>发布时间：<span>{{$stuff.published_on|date_format:"%Y.%m.%d"}}</span></h5>
+                <h5>分类：<span><a title="{{$stuff.category.title}}" href="{{$domain}}{{format key='category' cid=$stuff.category.id}}">{{$stuff.category.title}}</a></span></h5>
+                <h5>标签：{{foreach item=p from=$stuff.keyword}}{{$p}} {{/foreach}}</h5>
+                <h5><a id="down_stuff" href="/upload/{{$stuff.down_url}}" target="_blank" title="{{$stuff.title}}素材下载"><img src="/images/btn_down.gif" alt="{{$stuff.title}}素材下载"/></a></h5>
+            </div>
+            <div class="list_mate wrapfix">
+                <h2>相关素材</h2>
+                <ul>
+                    {{foreach item=p from=$new_data}}
+                    <li><a href="{{$domain}}{{format key='sucai' id=$p.id}}" title="{{$p.title}}"><img src="/upload/{{$p.image_url}}" width="150" /></a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+        </div>
+    </div>
+{{include file='footer.html'}}
+</div>
+</body>
+</html>

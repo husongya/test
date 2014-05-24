@@ -1,0 +1,65 @@
+<?php
+class Yummy_Dba extends yummy_Object{
+    public $database_type;
+    public $host;
+    public $username;
+    public $password;
+    public $database;
+    public $db;
+    public $connect = false;
+	public $_data = array();
+
+    function __construct(){
+    	$data = Yummy_Config::get("databases");
+        $this->database_type = $data["type"];
+        $this->host = $data["host"];
+        $this->username = $data["username"];
+        $this->password = $data["password"];
+        $this->database = $data["database"];
+        
+        $this->db = NewADOConnection($this->database_type);
+        $this->db->Connect($this->host,$this->username,$this->password,$this->database);
+		$conn = (array)($this->db);
+		if(strlen($conn['_errorMsg']) > 0){
+			throw new Exception('connection database is error!');
+		}
+		$this->connect = true;
+		$this->db->execute('SET NAMES UTF8');
+    }
+	public function conn(){
+		return $this->db;
+	}
+	
+	public function query($sql,$size=-1,$page=1,$vars=array()){
+        if(!$this->connect){
+            throw new Yummy_Exception("Database connect failed");
+        }
+		//        $rs =  $this->db->PageExecute($sql,$size,$page,$vars);
+        if($size>0){
+            if($page>=1){
+					$offset = ($page-1)*$size;
+            }else{
+                $offset =-1;
+            }
+        }else{
+            $page=-1;
+            $size=-1;
+            $offset =-1;
+        }
+         if($size>0){
+            $sql .= ' LIMIT '.$size;
+            if($offset>0){
+                $sql.=' OFFSET '.$offset;
+            }
+        }  
+        //$rs = $this->db->SelectLimit($sql,$size,$offset,$vars);
+        $rs = $this->db->Query($sql,$vars);
+		//print_r($rs->GetRows());
+        Yummy_Object::debug("SQL:[$sql]:vars:".print_r($vars,true),__METHOD__);
+        if($rs===false) {
+            throw new Yummy_Exception("Database Error:[".$this->db->ErrorMsg().'] Cause SQL:['.$sql.']');
+        }
+        return $rs->GetRows();
+    }
+ }
+?>

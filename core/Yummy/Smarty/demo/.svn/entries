@@ -1,0 +1,50 @@
+8
+
+dir
+15012
+http://svn.chinavisual.com/svn/chinavisual/match/trunk/Yummy/Smarty/demo
+http://svn.chinavisual.com/svn/chinavisual
+
+
+
+2008-07-05T06:07:12.504304Z
+14904
+husong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1b166838-0b25-0410-8b1c-fcfaa5cd2c81
+
+templates_c
+dir
+
+configs
+dir
+
+index.php
+file
+
+
+
+
+2008-07-07T03:25:31.000000Z
+2e485e1b32262c35974c079dd7701d32
+2008-07-05T06:07:12.504304Z
+14904
+husong
+has-props
+
+templates
+dir
+

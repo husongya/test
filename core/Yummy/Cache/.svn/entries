@@ -1,0 +1,54 @@
+8
+
+dir
+15012
+http://svn.chinavisual.com/svn/chinavisual/match/trunk/Yummy/Cache
+http://svn.chinavisual.com/svn/chinavisual
+
+
+
+2008-07-05T06:07:12.504304Z
+14904
+husong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1b166838-0b25-0410-8b1c-fcfaa5cd2c81
+
+Manager.php
+file
+15339
+
+
+
+2008-09-04T05:05:32.000000Z
+0f3007ec791cc45164ea510874ae862a
+2008-09-04T05:06:09.105843Z
+15339
+husong
+has-props
+
+Memcached.php
+file
+
+
+
+
+2008-07-07T03:25:34.000000Z
+3f711c97568a0e1233385c6655dff2ba
+2008-07-05T06:07:12.504304Z
+14904
+husong
+has-props
+

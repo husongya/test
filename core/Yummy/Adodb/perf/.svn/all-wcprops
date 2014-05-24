@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf
+END
+perf-db2.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-db2.inc.php
+END
+perf-informix.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-informix.inc.php
+END
+perf-mssql.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-mssql.inc.php
+END
+perf-oci8.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-oci8.inc.php
+END
+perf-mysql.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-mysql.inc.php
+END
+perf-postgres.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/chinavisual/!svn/ver/14904/match/trunk/Yummy/Adodb/perf/perf-postgres.inc.php
+END

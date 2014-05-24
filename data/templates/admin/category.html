@@ -1,0 +1,39 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/show.css" rel="stylesheet" type="text/css" />
+<link href="css/page.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="wrapper">
+       
+        <div id="show_list">
+             <h1>{{include file="admin/navigation.html"}}</h1>
+                 <div id="list">
+                     <div id="page"><form name="form1" action="index.php" method="get">
+                     <input name="action" value="search" type="hidden" >
+                     <input name="keyword" id="keyword" size="36" maxlength="100" type="text" value="{{$keyword}}">
+                     <select name='type'>
+                      <option value="1" {{if $type neq 2}}selected="selected"{{/if}} >按作品名称</option>
+                      <option value="2" {{if $type eq 2}}selected="selected"{{/if}} >按作者昵称</option>
+                     </select>
+                     <input value="搜索" id="sb" type="submit"></form></div> 
+                      <div id="page">{{include file="page.html"}}</div> 
+                           {{foreach item=p from=$result}}
+                             <span>
+                                 <p>编号：{{$p.id}} {{$p.title}} <a href="index.php?action=addCategory&id={{$p.id}}" >修改</a> <br /> </p>
+                             </span>
+                            {{/foreach}}
+                             <div class="clear"></div>
+
+                           <div id="page">{{include file="admin/page.html"}}</div> 
+          </div>
+        </div>
+</div>
+

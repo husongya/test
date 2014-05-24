@@ -1,0 +1,25 @@
+<div class="pages">
+    {{if $page gt 1}}
+        <a class="other" href="{{$domain}}{{formatPage key=$common_url v1=$page-1}}">上一页</a>
+    {{else}}<span>上一页</span>{{/if}}
+        <p>
+    {{if $page gte 6 && $totalPage gt 8}}
+        <a href="{{$domain}}{{formatPage key=$common_url v1=1}}" >1</a>
+        ...
+    {{/if}}
+    {{page totalPage=$totalPage currentPage=$page item=p}}
+         {{if $p eq $page}}
+         {{$p}}
+         {{else}}
+         <a {{if $p eq $page}}class="current"{{/if}} href="{{$domain}}{{formatPage key=$common_url v1=$p}}" >{{$p}}</a>
+         {{/if}}
+    {{/page}}
+    {{if $page lte $totalPage-5 && $totalPage gt 8}}
+        ...
+        <a href="{{$domain}}{{formatPage key=$common_url v1=$totalPage}}" >{{$totalPage}}</a>             
+    {{/if}}
+        </p>
+    {{if $page lt $totalPage}}
+        <a class="other" href="{{$domain}}{{formatPage key=$common_url v1=$page+1}}">下一页</a>
+    {{else}}<span>下一页</span>{{/if}}
+</div>

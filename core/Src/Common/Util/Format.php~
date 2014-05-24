@@ -1,0 +1,23 @@
+<?php
+class Original_Util_Format extends Doggy_Object   {
+    /**
+     * 获取original.yml中的url配置
+     *
+     * @param yml中的KEY $key
+     * @param array $value 要格式化的参数,按顺序放入
+     * @return string url
+     */
+    public static function getUrl($key,$value=array()){
+        $url = Doggy_Config::get('original.'.$key,null);
+        if(is_null($url)){
+            return false;
+        }
+        if(empty($value)){
+            return $url;
+        }
+
+        array_unshift($value,$url);
+        return call_user_func_array('sprintf',$value);
+    }
+}
+?>

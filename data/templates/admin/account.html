@@ -1,0 +1,60 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/show.css" rel="stylesheet" type="text/css" />
+<link href="css/page.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="wrapper">
+       
+        <div id="show_list">
+             <h1>{{include file="admin/navigation.html"}}</h1>
+                 <div id="list">
+                     <div id="page">
+                     <form name="form1" action="index.php" method="get">
+	                     <input name="action" value="account" type="hidden" >
+	                     <input name="type" value="add" type="hidden" >
+	                     <input name="account" id="account" size="36" maxlength="100" type="text">
+	                     <input value="添加管理员" id="sb" type="submit">
+                     </form></div> 
+                         <table width="100%" cellspacing="0" cellpadding="0" class="tryout">
+                                           
+                        <thead>
+                            <th>id</th>
+                            <th>帐号</th>
+                            <th>名称</th>
+                            <th>注册时间</th>
+                            <th>操作</th>
+                        </thead>
+                        <tbody>
+                            {{foreach item=p from=$manage}}
+                            <tr>
+                                <td>{{$p.id}}</td>
+                                <td>{{$p.account}} (管理员)</td>
+                                <td>{{$p.name}}</td>
+                                <td>{{$p.created_on}}</td>
+                                <td><a href="index.php?action=account&type=delete&id={{$p.id}}">降为普通会员</a></td>
+                            </tr>
+                            {{/foreach}}
+                            {{foreach item=p from=$user}}
+                            <tr>
+                                <td>{{$p.id}}</td>
+                                <td>{{$p.account}}</td>
+                                <td>{{$p.name}}</td>
+                                <td>{{$p.created_on}}</td>
+                                <td></td>
+                            </tr>
+                            {{/foreach}}
+                        </tbody>
+                    </table>
+                    <div id="page">{{include file="page.html"}}</div>
+          </div>
+        </div>
+</div>
+

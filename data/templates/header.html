@@ -1,0 +1,15 @@
+    <div id="header" class="wrapfix">
+        <div class="logo"><a href="{{$domain}}" title="矢量素材下载"><img src="/images/logo.gif"  /></a></div>
+        <div class="banner"><a href="http://s.click.taobao.com/t_1?i=qXste4lzhyUPbA%3D%3D&p=mm_10785004_0_0&n=11" title="最新推出　2008年《PSD分层素材库》第三版 20DVD" target="_blank"><img src="/images/banner.gif" /></a></div>
+    </div>
+    <div class="nav">
+        <ul class="wrapfix">
+            <li><a {{if $cid eq 0}}class="current"{{/if}} title="最新素材" href="{{$domain}}">最新素材</a></li>
+            {{foreach item=c from=$category}}
+            <li><a {{if $cid eq $c.id}}class="current"{{/if}} title="{{$c.title}}" href="{{$domain}}{{format key='category' cid=$c.id}}">{{$c.title}}</a></li>
+            {{/foreach}}
+        </ul>
+        <!--<div class="menu">
+            <a href=""></a>
+        </div>-->
+    </div>

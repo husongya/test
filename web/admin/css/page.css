@@ -1,0 +1,110 @@
+#page {
+
+	text-align: right;
+
+}
+
+
+
+#page a{
+
+	padding:2px 5px;
+
+	background:#ededed;
+
+	color:#373737;
+
+	font-weight:bold;
+
+	text-decoration:none;
+
+}
+
+
+
+#page a:hover{
+
+	background:#cacaca;	
+
+}
+
+
+
+#page a:active{
+
+	background:#cacaca;	
+
+}
+
+
+
+#page a.current{
+
+	background:#cacaca;	
+
+}
+
+
+
+#page a.on:hover{
+
+	background:#ededed;	
+
+}
+
+
+
+#page a.back:hover{
+
+	background:#ededed;	
+
+}
+
+
+
+#page a.on:active{
+
+	background:#ededed;	
+
+}
+
+
+
+#page a.back:active{
+
+	background:#ededed;	
+
+}
+/*
+<div id="page">
+
+<span>Pages:</span>
+
+<a href="#" class="on"><<</a>
+
+<a href="#" class="current">1</a>
+
+<a href="#">2</a>
+
+<a href="#">3</a>
+
+<a href="#">4</a>
+
+<a href="#">5</a>
+
+<a href="#">6</a>
+
+<a href="#">7</a>
+
+<a href="#">8</a>
+
+<a href="#">9</a>
+
+	...
+
+<a href="#">last</a>
+
+<a href="#" class="back">>></a>
+
+</div>
+*/

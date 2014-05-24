@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^c/([0-9]+)\.html app.php?id=$1
+RewriteRule ^c/([0-9]+)_([0-9]+)\.html$ app.php?cid=$1&page=$2
+RewriteRule ^sucai/([0-9]+)\.html$ sucai.php?id=$1
